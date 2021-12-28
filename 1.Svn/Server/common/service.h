@@ -1,0 +1,1 @@
+#define __BL_DROP_DESTROY_TIME__
