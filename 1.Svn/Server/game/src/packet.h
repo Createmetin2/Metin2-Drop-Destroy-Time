@@ -18,6 +18,6 @@ typedef struct packet_item_destroy_time
 {
 	BYTE	bHeader;
 	DWORD	dwVID;
-	time_t	tDestroyTime;
+	short	sDestroySeconds;
 } TPacketGCItemDestroyTime;
 #endif

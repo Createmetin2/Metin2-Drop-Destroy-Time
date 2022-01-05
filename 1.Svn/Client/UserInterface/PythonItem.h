@@ -11,5 +11,5 @@
 
 ///Add
 #if defined(__BL_DROP_DESTROY_TIME__)
-		void	SetDestroyTime(DWORD dwVID, time_t tDestroyTime);
+		void	SetDestroyTime(DWORD dwVID, short sDestroySeconds);
 #endif

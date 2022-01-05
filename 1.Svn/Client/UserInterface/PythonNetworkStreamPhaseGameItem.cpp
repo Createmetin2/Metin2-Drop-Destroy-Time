@@ -13,7 +13,7 @@ bool CPythonNetworkStream::RecvItemDestroyTime()
 	if (!Recv(sizeof(TPacketGCItemDestroyTime), &p))
 		return false;
 
-	CPythonItem::Instance().SetDestroyTime(p.dwVID, p.tDestroyTime);
+	CPythonItem::Instance().SetDestroyTime(p.dwVID, p.sDestroySeconds);
 	return true;
 }
 #endif

@@ -11,10 +11,12 @@
 
 ///Add
 #if defined(__BL_DROP_DESTROY_TIME__)
+	tDestroyTime = time(0) + iSec;
+
 	TPacketGCItemDestroyTime p;
 	p.bHeader = HEADER_GC_ITEM_DESTROY_TIME;
 	p.dwVID = m_dwVID;
-	p.tDestroyTime = tDestroyTime = time(0) + iSec;
+	p.sDestroySeconds = static_cast<short>(difftime(tDestroyTime, time(NULL)));
 	PacketAround(&p, sizeof(p));
 #endif
 
@@ -25,7 +27,7 @@
 		TPacketGCItemDestroyTime p;
 		p.bHeader = HEADER_GC_ITEM_DESTROY_TIME;
 		p.dwVID = m_dwVID;
-		p.tDestroyTime = tDestroyTime;
+		p.sDestroySeconds = static_cast<short>(difftime(tDestroyTime, time(NULL)));
 		d->Packet(&p, sizeof(TPacketGCItemDestroyTime));
 	}
 #endif

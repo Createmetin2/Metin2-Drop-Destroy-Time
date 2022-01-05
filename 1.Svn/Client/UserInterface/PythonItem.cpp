@@ -40,11 +40,11 @@ void CPythonItem::Update(const POINT& c_rkPtMouse)
 
 ///Add new func
 #if defined(__BL_DROP_DESTROY_TIME__)
-void CPythonItem::SetDestroyTime(DWORD dwVID, time_t tDestroyTime)
+void CPythonItem::SetDestroyTime(DWORD dwVID, short sDestroySeconds)
 {
 	TGroundItemInstanceMap::const_iterator itor = m_GroundItemInstanceMap.find(dwVID);
 
 	if (m_GroundItemInstanceMap.end() != itor)
-		itor->second->tDestroyTime = tDestroyTime;
+		itor->second->tDestroyTime = time(NULL) + sDestroySeconds;
 }
 #endif
